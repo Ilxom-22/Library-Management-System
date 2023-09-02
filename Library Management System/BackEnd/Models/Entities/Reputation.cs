@@ -28,20 +28,4 @@ public class Reputation : IEntity, ICopyable<Reputation>
     {
         return new Reputation(this);
     }
-
-    public override int GetHashCode()
-    {
-        int hash = 17;
-        hash = hash * 23 + UserId.GetHashCode();
-        hash = hash * 23 + BookId.GetHashCode();
-        return hash;
-    }
-
-    public override bool Equals(object? obj)
-    {
-        if (obj != null && obj is Reputation)
-            return GetHashCode() == obj.GetHashCode();
-
-        return false;
-    }
 }

@@ -40,7 +40,10 @@ public class RatingService : IRatingService
     }
 
     private Reputation? RatingExists(Reputation rating)
-        => _context.Reputations.FirstOrDefault(reputation => reputation.Equals(rating));
+        => _context.Reputations
+            .FirstOrDefault(reputation =>
+                reputation.UserId == rating.UserId 
+                && reputation.BookId == rating.BookId);
 
     private List<Reputation> FindRatings(int bookId)
         => _context.Reputations

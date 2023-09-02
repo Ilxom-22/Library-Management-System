@@ -42,9 +42,7 @@ public class Book : IEntity, ICopyable<Book>
     {
         int hash = 17;
         hash = hash * 23 + Title.GetHashCode();
-        hash = hash * 23 + Description.GetHashCode();
         hash = hash * 23 + AuthorId.GetHashCode();
-        hash = hash * 23 + Quantity.GetHashCode();
         return hash;
     }
 
